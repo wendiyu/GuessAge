@@ -27,12 +27,10 @@ local function MyAge( event )
 
 	if numberUser == 18 then
 		answer.text = ("You got it right! Do you want to play again?")
-	elseif numberUser < 18 then
+	elseif numberUser <= 18 then
 			answer.text = ("You guessed too small. Please try again.")
-	elseif numberUser > 18 then
+	elseif numberUser >= 18 then
 			answer.text = ("You guessed too big. Please try again.")
-	else 
-		answer. text = ("Invalid answer. Please try again.")
 	end
 end
 
