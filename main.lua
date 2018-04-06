@@ -7,7 +7,7 @@
 -- guess the age
 -----------------------------------------------------------------------------------------
 
-local answer = display.newText( "", 900, 1150, native.systemFont, 100 )
+local answer = display.newText( "", 1000, 1150, native.systemFont, 100 )
 
 local queation = display.newText( "Guess my age", 1000, 200, native.systemFont, 120 )
 
@@ -22,17 +22,15 @@ enterButton.id = "enter button"
 
 local function MyAge( event )
 	-- body
-	math.randomseed( os.time() )
-	local randomText = math.random ( 1, 13 ) 
-	print(randomText)
+	local realAge = 18
 	local numberUser = tonumber(numberTextField.text)
 
-	if randomText == numberUser then
+	if numberUser == 18 then
 		answer.text = ("You got it right! Do you want to play again?")
-	elseif numberUser < randomText then
-			answer.text = ("You guessed too small.")
-	elseif numberUser > randomText then
-			answer.text = ("You guessed too big.")
+	elseif numberUser < 18 then
+			answer.text = ("You guessed too small. Please try again.")
+	elseif numberUser > 18 then
+			answer.text = ("You guessed too big. Please try again.")
 	else 
 		answer. text = ("Invalid answer. Please try again.")
 	end
